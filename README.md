@@ -361,81 +361,9 @@ Whenever appropriate, experiments investigate:
 
 The objective is to make the experiments reproducible and scientifically interpretable.
 
----
 
-# Projects
 
-The repository currently focuses on four complementary QML paradigms:
 
-### Project 1 — Quantum Kernel Learning
-
-Quantum feature maps and quantum kernels for supervised learning, followed by comparison with classical kernel methods.
-
-**Main concepts:** feature maps, quantum kernels, kernel matrices, SVMs, similarity estimation, hybrid quantum-classical learning.
-
-### Project 2 — VQC vs Classical Neural Network
-
-A controlled comparison between a Variational Quantum Classifier and a classical neural network.
-
-**Main concepts:** parameterized quantum circuits, variational optimization, gradients, trainability, model capacity, generalization, and fair benchmarking.
-
-### Project 3 — Quantum Convolutional Neural Network
-
-A structured quantum learning model inspired by convolutional neural networks.
-
-**Main concepts:** local quantum operations, hierarchical representations, quantum convolution, pooling, image data, and generalization.
-
-### Project 4 — Quantum Generative Adversarial Network
-
-A quantum generative model trained to reproduce a target probability distribution.
-
-**Main concepts:** quantum generators, discriminators, adversarial training, sampling, probability distributions, and training stability.
-
----
-
-# Beyond the core projects
-
-Future work will extend the repository toward more research-oriented applications, including:
-
-* quantum anomaly detection;
-* Quantum Machine Learning for physical systems;
-* learning and characterizing quantum thermal states;
-* Quantum Machine Learning combined with tensor networks;
-* noisy and hardware-oriented QML;
-* scalability and resource estimation;
-* quantum-classical model benchmarking.
-
-These extensions will focus increasingly on scientific datasets and problems where the structure of the underlying quantum or physical system can be exploited.
-
----
-
-# Research perspective
-
-The central question throughout this repository is not simply:
-
-> **Can a quantum computer perform machine learning?**
-
-but rather:
-
-> **When does the quantum formulation provide a useful computational or representational advantage, and what resources are required to obtain it?**
-
-This requires considering the entire pipeline:
-
-$$
-\text{Data preparation}
-+
-\text{Quantum computation}
-+
-\text{Measurement}
-+
-\text{Classical optimization}
-+
-\text{Post-processing}.
-$$
-
-A quantum model that achieves high accuracy but requires substantially greater computational resources than a classical baseline is not automatically advantageous.
-
-Consequently, the experiments emphasize **controlled comparisons, reproducibility, scalability, trainability, and realistic resource considerations**.
 
 ---
 
