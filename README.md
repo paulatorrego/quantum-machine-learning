@@ -21,11 +21,7 @@ There are several fundamentally different ways to combine the two:
 * using quantum circuits as generative models;
 * exploiting quantum structure in scientific and physical datasets.
 
-This repository develops these ideas progressively, from the mathematical foundations to complete experimental pipelines.
-
-A central theme is the comparison between quantum and classical approaches under comparable conditions.
-
-> **The objective is not to assume quantum advantage, but to investigate where quantum models provide useful capabilities and where classical methods remain superior.**
+A central theme is the comparison between quantum and classical approaches under comparable conditions. The objective is not to assume quantum advantage, but to investigate where quantum models provide useful capabilities and where classical methods remain superior.
 
 ---
 
