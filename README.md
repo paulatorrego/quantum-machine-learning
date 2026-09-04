@@ -93,7 +93,7 @@ Quantum kernels use quantum circuits to estimate similarities between data point
 A typical kernel is based on
 
 $$
-K(x,x')=|< \phi(x)|\phi(x')>|^2.
+K(x,x')=|<\phi(x)|\phi(x')>|^2.
 $$
 
 The resulting kernel matrix can then be provided to a classical learning algorithm such as a Support Vector Machine.
@@ -181,13 +181,7 @@ Quantum Neural Networks can be understood as trainable quantum circuits whose pa
 A simple model may be written as
 
 $$
-f_\theta(x)
-=
-< 0|
-U^\dagger(x,\theta)
-O
-U(x,\theta)
-|0>
+f_\theta(x)=<0|U^\dagger(x,\theta)OU(x,\theta)|0>
 $$
 
 The quantum circuit therefore acts as a differentiable component inside a larger learning pipeline.
