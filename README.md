@@ -93,9 +93,7 @@ Quantum kernels use quantum circuits to estimate similarities between data point
 A typical kernel is based on
 
 $$
-K(x,x')
-=
-|< \phi(x)|\phi(x')>|**2.
+K(x,x')=|< \phi(x)|\phi(x')>|^2.
 $$
 
 The resulting kernel matrix can then be provided to a classical learning algorithm such as a Support Vector Machine.
