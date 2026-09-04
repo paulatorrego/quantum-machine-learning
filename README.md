@@ -95,7 +95,7 @@ A typical kernel is based on
 $$
 K(x,x')
 =
-|\langle \phi(x)|\phi(x')\rangle|^2.
+|\langle \phi(x)|\phi(x')\rangle|**2.
 $$
 
 The resulting kernel matrix can then be provided to a classical learning algorithm such as a Support Vector Machine.
@@ -189,7 +189,7 @@ f_\theta(x)
 U^\dagger(x,\theta)
 O
 U(x,\theta)
-|0\rangle.
+|0\rangle
 $$
 
 The quantum circuit therefore acts as a differentiable component inside a larger learning pipeline.
