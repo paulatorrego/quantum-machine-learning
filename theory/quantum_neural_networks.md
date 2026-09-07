@@ -265,7 +265,7 @@ $$
 QNNs can suffer from barren plateaus, where
 
 $$
-\operatorname{Var}(\partial_\theta L)
+\mathrm{Var}(\partial_\theta L)
 $$
 
 becomes exponentially small with system size.
