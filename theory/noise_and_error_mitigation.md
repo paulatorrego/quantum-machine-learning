@@ -52,24 +52,19 @@ Shot noise occurs because a finite number of measurements estimates an underlyin
 An ideal pure state is
 
 $$
-\rho
-=
-|\psi\rangle\langle\psi|.
+\rho=|\psi\rangle\langle\psi|.
 $$
 
 Noise maps it to
 
 $$
-\rho'
-=
-\mathcal E(\rho).
+\rho'=\mathcal E(\rho).
 $$
 
 A quantum channel can be represented in Kraus form:
 
 $$
-\mathcal E(\rho)
-=
+\mathcal E(\rho)=
 \sum_k
 E_k\rho E_k^\dagger,
 $$
@@ -89,8 +84,7 @@ $$
 A simplified single-qubit depolarizing channel is
 
 $$
-\mathcal E(\rho)
-=
+\mathcal E(\rho)=
 (1-p)\rho
 +
 \frac{p}{3}
@@ -100,16 +94,14 @@ $$
 ## Bit flip
 
 $$
-\mathcal E(\rho)
-=
+\mathcal E(\rho)=
 (1-p)\rho+pX\rho X.
 $$
 
 ## Phase flip
 
 $$
-\mathcal E(\rho)
-=
+\mathcal E(\rho)=
 (1-p)\rho+pZ\rho Z.
 $$
 
@@ -120,15 +112,7 @@ Amplitude damping models energy relaxation.
 A standard Kraus representation uses
 
 $$
-E_0
-=
-\begin{pmatrix}
-1&0\\
-0&\sqrt{1-\gamma}
-\end{pmatrix},
-\qquad
-E_1
-=
+E_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix},\qquad E_1=
 \begin{pmatrix}
 0&\sqrt{\gamma}\\
 0&0
@@ -142,8 +126,7 @@ $$
 Two fundamental coherence times are:
 
 $$
-T_1
-=
+T_1=
 \text{energy-relaxation timescale},
 $$
 
@@ -166,16 +149,14 @@ Suppose the true bit is $x$, but the measured bit is $y$.
 A readout confusion matrix may be written as
 
 $$
-M_{y|x}
-=
+M_{y|x}=
 P(y|x).
 $$
 
 Observed probabilities satisfy
 
 $$
-p_{\mathrm{obs}}
-=
+p_{\mathrm{obs}}=
 Mp_{\mathrm{true}}.
 $$
 
