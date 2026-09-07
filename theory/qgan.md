@@ -4,29 +4,29 @@
 
 A generative model attempts to learn a probability distribution
 
-\[
+$$
 p_{\mathrm{data}}(x)
-\]
+$$
 
 and generate samples resembling the training distribution.
 
 A classical GAN consists of:
 
-\[
+$$
 z
 \rightarrow
 G_\theta(z)
 \rightarrow
 x_{\mathrm{fake}}
-\]
+$$
 
 and a discriminator
 
-\[
+$$
 D_\phi(x)
 \rightarrow
 [0,1].
-\]
+$$
 
 ---
 
@@ -34,16 +34,15 @@ D_\phi(x)
 
 The original GAN objective is
 
-\[
+$$
 \min_G\max_D
-V(D,G)
-=
+V(D,G)=
 \mathbb E_{x\sim p_{\mathrm{data}}}
 [\log D(x)]
 +
 \mathbb E_{z\sim p_z}
 [\log(1-D(G(z)))].
-\]
+$$
 
 The discriminator tries to distinguish real from generated data.
 
@@ -57,25 +56,24 @@ A Quantum GAN (QGAN) replaces or augments the classical generator with a paramet
 
 A simple quantum generator prepares
 
-\[
-|\psi(\theta)\rangle
-=
+$$
+|\psi(\theta)\rangle=
 U(\theta)|\psi_0\rangle.
-\]
+$$
 
 Measurement in the computational basis produces samples
 
-\[
+$$
 x\sim p_\theta(x),
-\]
+$$
 
 where
 
-\[
+$$
 p_\theta(x)
 =
 |\langle x|\psi(\theta)\rangle|^2.
-\]
+$$
 
 The circuit therefore defines a probability distribution.
 
@@ -85,7 +83,7 @@ The circuit therefore defines a probability distribution.
 
 A conceptual architecture is
 
-\[
+$$
 \boxed{
 z
 \rightarrow
@@ -95,15 +93,15 @@ z
 \rightarrow
 x_{\mathrm{fake}}
 }
-\]
+$$
 
 followed by
 
-\[
+$$
 x_{\mathrm{real}},x_{\mathrm{fake}}
 \rightarrow
 \text{discriminator}.
-\]
+$$
 
 The discriminator can be classical or quantum.
 
@@ -113,28 +111,26 @@ The discriminator can be classical or quantum.
 
 Suppose the quantum state is
 
-\[
-|\psi(\theta)\rangle
-=
+$$
+|\psi(\theta)\rangle=
 \sum_x
 \alpha_x(\theta)|x\rangle.
-\]
+$$
 
 Then
 
-\[
-p_\theta(x)
-=
+$$
+p_\theta(x)=
 |\alpha_x(\theta)|^2.
-\]
+$$
 
 Training aims to make
 
-\[
+$$
 p_\theta(x)
 \approx
 p_{\mathrm{data}}(x).
-\]
+$$
 
 This is one of the most direct ways to understand a quantum generative model.
 
@@ -144,11 +140,10 @@ This is one of the most direct ways to understand a quantum generative model.
 
 A quantum generator can produce entangled states such as
 
-\[
-|\psi\rangle
-=
+$$
+|\psi\rangle=
 \sum_x\alpha_x|x\rangle.
-\]
+$$
 
 Entanglement can represent correlations between qubits.
 
@@ -156,11 +151,11 @@ This makes quantum circuits natural candidates for structured probability distri
 
 However,
 
-\[
+$$
 \text{entanglement}
 \neq
 \text{automatic generative advantage}.
-\]
+$$
 
 The generated distribution still has to outperform strong classical alternatives under a fair resource comparison.
 
@@ -170,11 +165,10 @@ The generated distribution still has to outperform strong classical alternatives
 
 A discriminator can itself be a QNN:
 
-\[
-D_\phi(x)
-=
+$$
+D_\phi(x)=
 \frac{1+\langle Z\rangle}{2}.
-\]
+$$
 
 Then both generator and discriminator may be quantum.
 
@@ -210,21 +204,21 @@ Repeat
 
 Mathematically,
 
-\[
+$$
 \phi
 \leftarrow
 \operatorname{optimizer}_D
 (\nabla_\phi L_D),
-\]
+$$
 
 then
 
-\[
+$$
 \theta
 \leftarrow
 \operatorname{optimizer}_G
 (\nabla_\theta L_G).
-\]
+$$
 
 ---
 
@@ -249,20 +243,19 @@ Do not evaluate only discriminator accuracy.
 
 Useful metrics include:
 
-\[
+$$
 D_{\mathrm{KL}}
 (p_{\mathrm{data}}\|p_\theta),
-\]
+$$
 
 total variation distance,
 
-\[
-D_{\mathrm{TV}}
-=
+$$
+D_{\mathrm{TV}}=
 \frac12
 \sum_x
 |p_{\mathrm{data}}(x)-p_\theta(x)|,
-\]
+$$
 
 and fidelity-like distribution comparisons.
 
@@ -281,11 +274,11 @@ Also inspect:
 
 A QGAN is a particularly intuitive extension of a classical GAN:
 
-\[
+$$
 \text{classical generator}
 \rightarrow
 \text{quantum generator}.
-\]
+$$
 
 The conceptual adversarial game remains similar, while the generative mechanism changes.
 
@@ -295,19 +288,19 @@ The conceptual adversarial game remains similar, while the generative mechanism 
 
 A strong portfolio project can begin with a small discrete distribution:
 
-\[
+$$
 p_{\mathrm{target}}(x)
-\]
+$$
 
-over \(2^n\) bit strings.
+over $2^n$ bit strings.
 
 Train a quantum circuit so that
 
-\[
+$$
 p_\theta(x)
 \rightarrow
 p_{\mathrm{target}}(x).
-\]
+$$
 
 Then compare:
 
