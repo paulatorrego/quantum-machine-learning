@@ -1,5 +1,3 @@
-# `theory/quantum_kernels.md`
-
 # Quantum Kernels
 
 ## 1. Classical kernels first
@@ -23,8 +21,7 @@ that measures some notion of similarity between two data points.
 A classical example is the radial basis function (RBF) kernel:
 
 $$
-K(x,x')
-=
+K(x,x')=
 \exp\left(
 -\frac{\|x-x'\|^2}{2\sigma^2}
 \right).
@@ -39,8 +36,7 @@ Two nearby points have a large similarity, while distant points have a smaller s
 A kernel can be interpreted as an inner product in some feature space:
 
 $$
-K(x,x')
-=
+K(x,x')=
 \langle
 \phi(x),
 \phi(x')
@@ -77,8 +73,7 @@ A common definition is
 
 $$
 \boxed{
-K_Q(x,x')
-=
+K_Q(x,x')=
 \left|
 \langle\phi(x)|\phi(x')\rangle
 \right|^2
@@ -88,8 +83,7 @@ $$
 where
 
 $$
-|\phi(x)\rangle
-=
+|\phi(x)\rangle=
 U_\phi(x)|0\rangle^{\otimes n}.
 $$
 
@@ -151,7 +145,7 @@ This is genuine QML because the representation/similarity computation is quantum
 
 # 5. The kernel matrix
 
-Suppose we have \(N\) training samples:
+Suppose we have $N$ training samples:
 
 $$
 x_1,x_2,\ldots,x_N.
@@ -166,16 +160,14 @@ $$
 with entries
 
 $$
-K_{ij}
-=
+K_{ij}=
 K(x_i,x_j).
 $$
 
 For a quantum kernel,
 
 $$
-K_{ij}
-=
+K_{ij}=
 \left|
 \langle
 \phi(x_i)
@@ -211,10 +203,8 @@ $$
 Therefore,
 
 $$
-K(x,x)
-=
-|\langle\phi(x)|\phi(x)\rangle|^2
-=
+K(x,x)=
+|\langle\phi(x)|\phi(x)\rangle|^2=
 1.
 $$
 
@@ -287,8 +277,7 @@ The complete workflow is:
 ### Step 1 — Classical data
 
 $$
-\mathcal{D}
-=
+\mathcal{D}=
 \{(x_i,y_i)\}.
 $$
 
@@ -299,8 +288,7 @@ Normalize the features.
 ### Step 3 — Quantum feature map
 
 $$
-|\phi(x_i)\rangle
-=
+|\phi(x_i)\rangle=
 U_\phi(x_i)|0\rangle.
 $$
 
@@ -443,8 +431,7 @@ Let \(K\) be the kernel matrix and \(Y\) a target matrix constructed from the la
 A normalized alignment can be written schematically as
 
 $$
-A(K,Y)
-=
+A(K,Y)=
 \frac{
 \langle K,Y\rangle_F
 }{
@@ -458,8 +445,7 @@ $$
 where
 
 $$
-\langle A,B\rangle_F
-=
+\langle A,B\rangle_F=
 \operatorname{Tr}(A^TB)
 $$
 
@@ -510,16 +496,14 @@ A feature map does not necessarily have to be fixed.
 We can define
 
 $$
-|\phi(x,\boldsymbol{\theta})\rangle
-=
+|\phi(x,\boldsymbol{\theta})\rangle=
 U_\phi(x,\boldsymbol{\theta})|0\rangle.
 $$
 
 Then
 
 $$
-K_{\boldsymbol{\theta}}(x,x')
-=
+K_{\boldsymbol{\theta}}(x,x')=
 \left|
 \langle
 \phi(x,\boldsymbol{\theta})
@@ -551,7 +535,7 @@ This is more advanced than the fixed-kernel experiment and is a natural future e
 
 # 14. Computational cost
 
-For \(N\) training points, constructing a full kernel matrix requires approximately
+For $N$ training points, constructing a full kernel matrix requires approximately
 
 $$
 O(N^2)
@@ -587,7 +571,7 @@ This is excellent for:
 
 However, if the quantum circuit becomes classically intractable, the simulation itself becomes the bottleneck.
 
-Real hardware could in principle evaluate the quantum feature map without explicitly representing the full \(2^n\)-dimensional state vector.
+Real hardware could in principle evaluate the quantum feature map without explicitly representing the full $2^n$-dimensional state vector.
 
 But real hardware introduces:
 
