@@ -620,7 +620,7 @@ A barren plateau is a region of parameter space where gradients become extremely
 If
 
 $$
-\operatorname{Var}
+\mathrm{Var}
 \left[
 \frac{\partial L}{\partial\theta}
 \right]
