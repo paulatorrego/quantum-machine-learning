@@ -112,7 +112,12 @@ Amplitude damping models energy relaxation.
 A standard Kraus representation uses
 
 $$
-E_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix},\qquad E_1=
+E_0=
+\begin{pmatrix}1&0\\
+0&
+\sqrt{1-\gamma}\end{pmatrix},
+\qquad 
+E_1=
 \begin{pmatrix}
 0&\sqrt{\gamma}\\
 0&0
@@ -126,15 +131,13 @@ $$
 Two fundamental coherence times are:
 
 $$
-T_1=
-\text{energy-relaxation timescale},
+T_1=\text{energy-relaxation timescale},
 $$
 
 and
 
 $$
-T_2
-=
+T_2=
 \text{dephasing/coherence timescale}.
 $$
 
@@ -303,16 +306,14 @@ $$
 A noisy implementation measures
 
 $$
-\tilde L(\theta)
-=
+\tilde L(\theta)=
 L(\theta)+\epsilon_{\mathrm{noise}}.
 $$
 
 The gradient becomes
 
 $$
-\nabla\tilde L
-=
+\nabla\tilde L=
 \nabla L
 +
 \nabla\epsilon_{\mathrm{noise}}.
@@ -393,8 +394,7 @@ $$
 and trace distance,
 
 $$
-D(\rho,\sigma)
-=
+D(\rho,\sigma)=
 \frac12\|\rho-\sigma\|_1.
 $$
 
