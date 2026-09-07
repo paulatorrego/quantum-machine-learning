@@ -6,17 +6,17 @@ Real quantum processors are imperfect.
 
 A practical quantum computation is therefore not simply
 
-\[
+$$
 U|\psi\rangle.
-\]
+$$
 
 Instead, it is better described by a quantum channel
 
-\[
+$$
 \rho'
 =
 \mathcal E(\rho).
-\]
+$$
 
 Noise can affect:
 
@@ -53,34 +53,34 @@ Shot noise occurs because a finite number of measurements estimates an underlyin
 
 An ideal pure state is
 
-\[
+$$
 \rho
 =
 |\psi\rangle\langle\psi|.
-\]
+$$
 
 Noise maps it to
 
-\[
+$$
 \rho'
 =
 \mathcal E(\rho).
-\]
+$$
 
 A quantum channel can be represented in Kraus form:
 
-\[
+$$
 \mathcal E(\rho)
 =
 \sum_k
 E_k\rho E_k^\dagger,
-\]
+$$
 
 with
 
-\[
+$$
 \sum_k E_k^\dagger E_k=I.
-\]
+$$
 
 ---
 
@@ -90,30 +90,30 @@ with
 
 A simplified single-qubit depolarizing channel is
 
-\[
+$$
 \mathcal E(\rho)
 =
 (1-p)\rho
 +
 \frac{p}{3}
 (X\rho X+Y\rho Y+Z\rho Z).
-\]
+$$
 
 ## Bit flip
 
-\[
+$$
 \mathcal E(\rho)
 =
 (1-p)\rho+pX\rho X.
-\]
+$$
 
 ## Phase flip
 
-\[
+$$
 \mathcal E(\rho)
 =
 (1-p)\rho+pZ\rho Z.
-\]
+$$
 
 ## Amplitude damping
 
@@ -121,7 +121,7 @@ Amplitude damping models energy relaxation.
 
 A standard Kraus representation uses
 
-\[
+$$
 E_0
 =
 \begin{pmatrix}
@@ -135,7 +135,7 @@ E_1
 0&\sqrt{\gamma}\\
 0&0
 \end{pmatrix}.
-\]
+$$
 
 ---
 
@@ -143,19 +143,19 @@ E_1
 
 Two fundamental coherence times are:
 
-\[
+$$
 T_1
 =
 \text{energy-relaxation timescale},
-\]
+$$
 
 and
 
-\[
+$$
 T_2
 =
 \text{dephasing/coherence timescale}.
-\]
+$$
 
 A circuit with duration comparable to these times can experience substantial decoherence.
 
@@ -163,23 +163,23 @@ A circuit with duration comparable to these times can experience substantial dec
 
 # 6. Readout Error
 
-Suppose the true bit is \(x\), but the measured bit is \(y\).
+Suppose the true bit is $x$, but the measured bit is $y$.
 
 A readout confusion matrix may be written as
 
-\[
+$$
 M_{y|x}
 =
 P(y|x).
-\]
+$$
 
 Observed probabilities satisfy
 
-\[
+$$
 p_{\mathrm{obs}}
 =
 Mp_{\mathrm{true}}.
-\]
+$$
 
 If \(M\) is calibrated and sufficiently well-conditioned, one can estimate
 
@@ -217,33 +217,33 @@ Zero-noise extrapolation (ZNE) evaluates a circuit at several effective noise le
 
 Let
 
-\[
+$$
 E(\lambda)
-\]
+$$
 
 be an observable measured at noise scale \(\lambda\).
 
 We estimate the zero-noise value
 
-\[
+$$
 E(0)
-\]
+$$
 
 by extrapolation.
 
 For example,
 
-\[
+$$
 E(\lambda)
 \approx
 E_0+a\lambda+b\lambda^2.
-\]
+$$
 
 Then fit the measured values and extrapolate to
 
-\[
+$$
 \lambda=0.
-\]
+$$
 
 Noise scaling can be implemented using circuit folding.
 
@@ -253,13 +253,13 @@ Noise scaling can be implemented using circuit folding.
 
 If noise can be characterized sufficiently well, an ideal operation may be represented approximately as a quasiprobability combination of noisy operations:
 
-\[
+$$
 \mathcal U
 \approx
 \sum_i q_i\mathcal E_i,
-\]
+$$
 
-where the coefficients \(q_i\) can be negative.
+where the coefficients $q_i$ can be negative.
 
 Sampling from this decomposition can reconstruct unbiased estimates but may have a large sampling overhead.
 
@@ -269,9 +269,9 @@ Sampling from this decomposition can reconstruct unbiased estimates but may have
 
 If a state should satisfy
 
-\[
+$$
 Q|\psi\rangle=q|\psi\rangle,
-\]
+$$
 
 measurements violating the symmetry can be discarded or corrected.
 
@@ -297,7 +297,7 @@ Randomized compiling and related techniques can transform coherent errors into m
 
 A realistic QML experiment should compare at least:
 
-\[
+$$
 \boxed{
 \text{ideal simulator}
 \rightarrow
@@ -307,7 +307,7 @@ A realistic QML experiment should compare at least:
 \rightarrow
 \text{hardware, if available}
 }
-\]
+$$
 
 This progression isolates different sources of degradation.
 
@@ -317,27 +317,27 @@ This progression isolates different sources of degradation.
 
 Suppose the ideal loss is
 
-\[
+$$
 L(\theta).
-\]
+$$
 
 A noisy implementation measures
 
-\[
+$$
 \tilde L(\theta)
 =
 L(\theta)+\epsilon_{\mathrm{noise}}.
-\]
+$$
 
 The gradient becomes
 
-\[
+$$
 \nabla\tilde L
 =
 \nabla L
 +
 \nabla\epsilon_{\mathrm{noise}}.
-\]
+$$
 
 Noise can therefore make an already difficult optimization problem substantially harder.
 
@@ -349,13 +349,13 @@ Noise can suppress gradient information.
 
 A qualitative picture is
 
-\[
+$$
 \left|
 \frac{\partial L}{\partial\theta}
 \right|
 \rightarrow
 0
-\]
+$$
 
 as circuit depth and noise increase.
 
@@ -379,15 +379,15 @@ It may require:
 
 Therefore the correct question is not simply
 
-\[
+$$
 \text{Does mitigation improve accuracy?}
-\]
+$$
 
 but
 
-\[
+$$
 \text{Does mitigation improve accuracy enough to justify its resource cost?}
-\]
+$$
 
 ---
 
@@ -395,29 +395,29 @@ but
 
 For a classifier, compare:
 
-\[
+$$
 \mathrm{Accuracy}_{\mathrm{ideal}},
 \qquad
 \mathrm{Accuracy}_{\mathrm{noisy}},
 \qquad
 \mathrm{Accuracy}_{\mathrm{mitigated}}.
-\]
+$$
 
 For regression, compare MSE or MAE.
 
 For quantum states, useful metrics include fidelity,
 
-\[
+$$
 F(\rho,\sigma),
-\]
+$$
 
 and trace distance,
 
-\[
+$$
 D(\rho,\sigma)
 =
 \frac12\|\rho-\sigma\|_1.
-\]
+$$
 
 ---
 
@@ -458,13 +458,13 @@ Fault-tolerant quantum computing aims to construct logical qubits whose effectiv
 
 Conceptually,
 
-\[
+$$
 \text{physical qubits}
 \rightarrow
 \text{encoded logical qubit}
 \rightarrow
 \text{fault-tolerant operations}.
-\]
+$$
 
 Large-scale useful quantum algorithms are expected to require substantial error-correction overhead.
 
@@ -476,7 +476,7 @@ For QML, this means that a future fault-tolerant QML system could look very diff
 
 The realistic QML progression is:
 
-\[
+$$
 \boxed{
 \text{ideal algorithm}
 \rightarrow
@@ -488,7 +488,7 @@ The realistic QML progression is:
 \rightarrow
 \text{fault-tolerant hardware}
 }
-\]
+$$
 
 Each stage answers a different scientific question.
 
