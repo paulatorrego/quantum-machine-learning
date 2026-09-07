@@ -13,7 +13,7 @@ The central ideas are:
 
 A conceptual QCNN is
 
-\[
+$$
 \boxed{
 \text{encoding}
 \rightarrow
@@ -27,7 +27,7 @@ A conceptual QCNN is
 \rightarrow
 \text{measurement}
 }
-\]
+$$
 
 ---
 
@@ -35,13 +35,13 @@ A conceptual QCNN is
 
 A classical CNN uses
 
-\[
+$$
 \text{convolution}
 \rightarrow
 \text{nonlinearity}
 \rightarrow
 \text{pooling}.
-\]
+$$
 
 A QCNN uses parameterized quantum operations and measurements/coarse-graining.
 
@@ -53,11 +53,10 @@ The analogy should not be taken literally: a quantum circuit is unitary before m
 
 A local two-qubit or few-qubit unitary can act as a convolutional filter:
 
-\[
-U_{\mathrm{conv}}(\theta)
-=
+$$
+U_{\mathrm{conv}}(\theta)=
 U_L(\theta_L)\cdots U_1(\theta_1).
-\]
+$$
 
 The same or related circuit structure can be applied to different local regions.
 
@@ -71,14 +70,14 @@ Pooling reduces the effective number of degrees of freedom.
 
 A schematic operation is
 
-\[
+$$
 n
 \rightarrow
 n/2
 \rightarrow
 n/4
 \rightarrow\cdots.
-\]
+$$
 
 In a quantum setting, pooling may involve:
 
@@ -95,7 +94,7 @@ The precise construction depends on the QCNN architecture.
 
 The architecture attempts to learn increasingly coarse representations:
 
-\[
+$$
 x
 \rightarrow
 h^{(1)}
@@ -107,7 +106,7 @@ h^{(2)}
 h^{(L)}
 \rightarrow
 \hat y.
-\]
+$$
 
 This is particularly interesting for data with spatial or local structure.
 
@@ -117,7 +116,7 @@ This is particularly interesting for data with spatial or local structure.
 
 A typical workflow is
 
-\[
+$$
 x
 \rightarrow
 U_{\mathrm{enc}}(x)
@@ -127,17 +126,16 @@ U_{\mathrm{QCNN}}(\theta)
 \langle Z\rangle
 \rightarrow
 \hat y.
-\]
+$$
 
 The loss is
 
-\[
-L(\theta)
-=
+$$
+L(\theta)=
 \frac1N
 \sum_i
 \ell(\hat y_i,y_i).
-\]
+$$
 
 ---
 
@@ -159,21 +157,21 @@ They also provide a natural bridge between QML and many-body physics.
 
 For a quantum many-body state,
 
-\[
+$$
 |\psi\rangle,
-\]
+$$
 
 a QCNN-like architecture can perform repeated coarse-graining.
 
 This creates a conceptual relationship with renormalization-group ideas:
 
-\[
+$$
 \text{microscopic degrees of freedom}
 \rightarrow
 \text{coarse variables}
 \rightarrow
 \text{effective description}.
-\]
+$$
 
 This connection is scientifically interesting, but a QCNN should not automatically be identified with a full renormalization-group procedure.
 
@@ -183,17 +181,17 @@ This connection is scientifically interesting, but a QCNN should not automatical
 
 Suppose the same local unitary
 
-\[
+$$
 U(\theta)
-\]
+$$
 
 is applied to several pairs:
 
-\[
+$$
 U_{1,2}(\theta)
 U_{3,4}(\theta)
 U_{5,6}(\theta).
-\]
+$$
 
 The parameter count can therefore remain relatively small even as the number of qubits grows.
 
@@ -220,21 +218,21 @@ Structure does not guarantee trainability.
 
 A generic QNN might use
 
-\[
+$$
 U_L(\theta_L)\cdots U_1(\theta_1)
-\]
+$$
 
 with arbitrary connectivity.
 
 A QCNN imposes an architecture:
 
-\[
+$$
 \text{local operations}
 +
 \text{hierarchy}
 +
 \text{coarse-graining}.
-\]
+$$
 
 Thus QCNNs trade unrestricted expressivity for inductive structure.
 
