@@ -13,9 +13,7 @@ $$
 Instead, it is better described by a quantum channel
 
 $$
-\rho'
-=
-\mathcal E(\rho).
+\rho'=\mathcal E(\rho).
 $$
 
 Noise can affect:
