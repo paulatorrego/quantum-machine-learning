@@ -1,5 +1,3 @@
-# `theory/quantum_data_encoding.md`
-
 # Quantum Data Encoding
 
 ## 1. Why do we need data encoding?
@@ -39,8 +37,7 @@ The choice of this mapping is not a technical detail. It can strongly affect the
 Suppose we have a binary classification dataset,
 
 $$
-\mathcal{D}
-=
+\mathcal{D}=
 \{(x^{(i)},y^{(i)})\}_{i=1}^{N},
 $$
 
@@ -69,8 +66,7 @@ as its input.
 A quantum model cannot simply "receive" this vector. We must construct a quantum state depending on it:
 
 $$
-|\psi(x)\rangle
-=
+|\psi(x)\rangle=
 U(x)|0\rangle^{\otimes n}.
 $$
 
@@ -105,8 +101,7 @@ It does **not necessarily contain trainable parameters**.
 For example,
 
 $$
-U_{\mathrm{enc}}(x)
-=
+U_{\mathrm{enc}}(x)=
 \bigotimes_{j=1}^{n}R_Y(x_j)
 $$
 
@@ -219,8 +214,7 @@ $$
 we can apply
 
 $$
-U_{\mathrm{enc}}(x)
-=
+U_{\mathrm{enc}}(x)=
 \bigotimes_{i=1}^{n}
 R_Y(x_i).
 $$
@@ -228,8 +222,7 @@ $$
 For one feature,
 
 $$
-R_Y(x)|0\rangle
-=
+R_Y(x)|0\rangle=
 \cos\left(\frac{x}{2}\right)|0\rangle
 +
 \sin\left(\frac{x}{2}\right)|1\rangle.
@@ -477,9 +470,9 @@ The best encoding is therefore not necessarily the one with the largest theoreti
 | Encoding          | Main idea                                  | Typical strength             | Main limitation                                   |                                           |
 | ----------------- | ------------------------------------------ | ---------------------------- | ------------------------------------------------- | ----------------------------------------- |
 | Basis             | (x\rightarrow                              | x\rangle)                    | Simple binary data                                | Limited to discrete/binary representation |
-| Angle             | \(x_i\rightarrow R(x_i)\)                  | Simple and hardware-friendly | Usually requires several qubits for many features |                                           |
+| Angle             | $x_i\rightarrow R(x_i)$                    | Simple and hardware-friendly | Usually requires several qubits for many features |                                           |
 | Amplitude         | (x\rightarrow\sum_i x_i                    | i\rangle)                    | High representational density                     | State preparation can be expensive        |
-| Data re-uploading | Repeated \(x\)-dependent gates             | Increased expressivity       | Greater circuit depth                             |                                           |
+| Data re-uploading | Repeated $x$-dependent gates               | Increased expressivity       | Greater circuit depth                             |                                           |
 | Hybrid            | Classical preprocessing + quantum encoding | Flexible                     | Adds classical preprocessing choices              |                                           |
 
 ---
