@@ -70,8 +70,7 @@ $$
 where
 
 $$
-p_\theta(x)
-=
+p_\theta(x)=
 |\langle x|\psi(\theta)\rangle|^2.
 $$
 
@@ -207,7 +206,7 @@ Mathematically,
 $$
 \phi
 \leftarrow
-\operatorname{optimizer}_D
+\\mathrm{optimizer}_D
 (\nabla_\phi L_D),
 $$
 
@@ -216,7 +215,7 @@ then
 $$
 \theta
 \leftarrow
-\operatorname{optimizer}_G
+\\mathrm{optimizer}_G
 (\nabla_\theta L_G).
 $$
 
