@@ -210,8 +210,9 @@ $$
 
 A schematic feature map could therefore generate phases of the form
 
-
-
+$$
+\exp ( \mathrm{i}\sum_{i} f_{i}(x_{i}) + \mathrm{i}\sum_{j > i} f_{ij}(x_{i},x_{j}) ) .
+$$
 
 The second term couples features.
 
