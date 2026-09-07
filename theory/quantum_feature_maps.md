@@ -1,5 +1,3 @@
-# `theory/quantum_feature_maps.md`
-
 # Quantum Feature Maps
 
 ## 1. From encoding to feature representation
@@ -13,8 +11,7 @@ $$
 We encode it into a quantum state,
 
 $$
-|\phi(x)\rangle
-=
+|\phi(x)\rangle=
 U_\phi(x)|0\rangle^{\otimes n}.
 $$
 
@@ -127,16 +124,14 @@ in many practical QML implementations.
 Consider
 
 $$
-U_\phi(x)
-=
+U_\phi(x)=
 \bigotimes_{i=1}^{n}R_Y(x_i).
 $$
 
 Then
 
 $$
-|\phi(x)\rangle
-=
+|\phi(x)\rangle=
 U_\phi(x)|0\rangle^{\otimes n}.
 $$
 
@@ -144,7 +139,7 @@ This is essentially an angle-encoding feature map.
 
 It contains no trainable parameters.
 
-The state is completely determined by \(x\).
+The state is completely determined by $x$.
 
 ---
 
@@ -155,8 +150,7 @@ The representation can become richer by introducing entangling gates.
 For example,
 
 $$
-U_\phi(x)
-=
+U_\phi(x)=
 U_{\mathrm{ent}}
 \left(
 \bigotimes_i R_Y(x_i)
@@ -265,8 +259,7 @@ $$
 The squared magnitude is
 
 $$
-K(x,x')
-=
+K(x,x')=
 \left|
 \langle\phi(x)|\phi(x')\rangle
 \right|^2.
@@ -311,8 +304,7 @@ The second produces a **trainable feature representation**.
 For example,
 
 $$
-|\phi(x,\boldsymbol{\theta})\rangle
-=
+|\phi(x,\boldsymbol{\theta})\rangle=
 U_\phi(x,\boldsymbol{\theta})|0\rangle.
 $$
 
@@ -352,19 +344,17 @@ U_\phi(x)
 K(x,x').
 $$
 
-For a dataset with \(N\) samples, we construct a Gram matrix
+For a dataset with $N$ samples, we construct a Gram matrix
 
 $$
-K_{ij}
-=
+K_{ij}=
 K(x_i,x_j).
 $$
 
 For the fidelity-based kernel,
 
 $$
-K_{ij}
-=
+K_{ij}=
 \left|
 \langle
 \phi(x_i)
@@ -396,10 +386,10 @@ $$
 
 Here:
 
-* \(U_\phi(x)\) encodes the input;
-* \(U(\boldsymbol{\theta})\) is trainable;
+* $U_\phi(x)$ encodes the input;
+* $U(\boldsymbol{\theta})$ is trainable;
 * measurements generate classical outputs;
-* a classical optimizer updates \(\boldsymbol{\theta}\).
+* a classical optimizer updates $\boldsymbol{\theta}$.
 
 This is the standard hybrid QML picture.
 
@@ -446,12 +436,11 @@ This trade-off is central to QML.
 Suppose
 
 $$
-U_\phi(x)
-=
+U_\phi(x)=
 U_L(x)\cdots U_2(x)U_1(x).
 $$
 
-Increasing \(L\) can increase the complexity of the representation.
+Increasing $L$ can increase the complexity of the representation.
 
 But deeper circuits also mean:
 
@@ -484,8 +473,7 @@ For example:
 ### Map A
 
 $$
-U_A(x)
-=
+U_A(x)=
 \prod_iR_Y(x_i).
 $$
 
@@ -501,8 +489,7 @@ $$
 ### Map C
 
 $$
-U_C(x)
-=
+U_C(x)=
 U_{\mathrm{ent}}
 U_{\mathrm{enc}}(x)
 U_{\mathrm{ent}}
