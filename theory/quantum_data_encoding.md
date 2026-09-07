@@ -72,9 +72,9 @@ $$
 
 Here:
 
-* \(n\) is the number of qubits,
-* \(U(x)\) is a data-dependent unitary,
-* \(|0\rangle^{\otimes n}\) is the initial computational-basis state.
+* $n$ is the number of qubits,
+* $U(x)$ is a data-dependent unitary,
+* $|0\rangle^{\otimes n}$ is the initial computational-basis state.
 
 This equation is the basic mathematical definition of a quantum data encoding.
 
@@ -303,8 +303,7 @@ $$
 we can encode it as
 
 $$
-|\psi(x)\rangle
-=
+|\psi(x)\rangle=
 x_1|00\rangle
 +
 x_2|01\rangle
@@ -359,8 +358,7 @@ Instead, the classical data can be injected repeatedly into the circuit.
 For example,
 
 $$
-U(x,\boldsymbol{\theta})
-=
+U(x,\boldsymbol{\theta})=
 U_{\mathrm{enc}}(x)
 U(\boldsymbol{\theta})
 U_{\mathrm{enc}}(x)
@@ -469,9 +467,9 @@ The best encoding is therefore not necessarily the one with the largest theoreti
 
 | Encoding          | Main idea                                  | Typical strength             | Main limitation                                   |                                           |
 | ----------------- | ------------------------------------------ | ---------------------------- | ------------------------------------------------- | ----------------------------------------- |
-| Basis             | (x\rightarrow                              | x\rangle)                    | Simple binary data                                | Limited to discrete/binary representation |
+| Basis             | $x\rightarrow$                             | $x\rangle$                    | Simple binary data                               | Limited to discrete/binary representation |
 | Angle             | $x_i\rightarrow R(x_i)$                    | Simple and hardware-friendly | Usually requires several qubits for many features |                                           |
-| Amplitude         | (x\rightarrow\sum_i x_i                    | i\rangle)                    | High representational density                     | State preparation can be expensive        |
+| Amplitude         | $x\rightarrow\sum_i x_i                    | i\rangle$                    | High representational density                     | State preparation can be expensive        |
 | Data re-uploading | Repeated $x$-dependent gates               | Increased expressivity       | Greater circuit depth                             |                                           |
 | Hybrid            | Classical preprocessing + quantum encoding | Flexible                     | Adds classical preprocessing choices              |                                           |
 
