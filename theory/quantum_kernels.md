@@ -1,6 +1,6 @@
 # Quantum Kernels
 
-## 1. Classical kernels first
+# 1. Classical kernels first
 
 To understand quantum kernels, it is useful to start with classical machine learning.
 
@@ -295,8 +295,7 @@ $$
 ### Step 4 — Kernel evaluation
 
 $$
-K_{ij}
-=
+K_{ij}=
 |\langle\phi(x_i)|\phi(x_j)\rangle|^2.
 $$
 
@@ -426,7 +425,7 @@ Accuracy is not the only way to evaluate a kernel.
 
 A useful diagnostic is **kernel-target alignment**.
 
-Let \(K\) be the kernel matrix and \(Y\) a target matrix constructed from the labels.
+Let \(K\) be the kernel matrix and $Y$ a target matrix constructed from the labels.
 
 A normalized alignment can be written schematically as
 
@@ -436,9 +435,7 @@ A(K,Y)=
 \langle K,Y\rangle_F
 }{
 \sqrt{
-\langle K,K\rangle_F
-\langle Y,Y\rangle_F
-}
+\langle K,K\rangle_F \langle Y,Y\rangle_F}
 },
 $$
 
@@ -446,7 +443,7 @@ where
 
 $$
 \langle A,B\rangle_F=
-\operatorname{Tr}(A^TB)
+\mathrm{Tr}(A^TB)
 $$
 
 is the Frobenius inner product.
@@ -689,7 +686,7 @@ The central research question is whether this quantum representation provides a 
 
 ---
 
-# `theory/quantum_data_encoding.md` — conceptual summary
+# Conceptual summary
 
 The complete QML pipeline can be viewed as
 
