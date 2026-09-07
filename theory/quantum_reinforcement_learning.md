@@ -4,9 +4,9 @@
 
 Reinforcement learning (RL) studies an agent interacting with an environment.
 
-At time \(t\):
+At time $t$:
 
-\[
+$$
 s_t
 \rightarrow
 a_t
@@ -14,24 +14,23 @@ a_t
 r_t
 \rightarrow
 s_{t+1}.
-\]
+$$
 
 The agent seeks to maximize the expected discounted return
 
-\[
-G_t
-=
+$$
+G_t=
 \sum_{k=0}^{\infty}
 \gamma^k r_{t+k},
 \qquad
 0\le\gamma<1.
-\]
+$$
 
 A policy is
 
-\[
+$$
 \pi(a|s).
-\]
+$$
 
 ---
 
@@ -55,21 +54,19 @@ There is no single universally accepted QRL architecture.
 
 A quantum policy can be represented as
 
-\[
-|\psi(s,\theta)\rangle
-=
+$$
+|\psi(s,\theta)\rangle=
 U(\theta)U_{\mathrm{enc}}(s)|0\rangle.
-\]
+$$
 
 Measurements define action probabilities:
 
-\[
-\pi_\theta(a|s)
-=
+$$
+\pi_\theta(a|s)=
 P(a|\psi(s,\theta)).
-\]
+$$
 
-The circuit therefore maps a state \(s\) to a probability distribution over actions.
+The circuit therefore maps a state $s$ to a probability distribution over actions.
 
 ---
 
@@ -77,18 +74,17 @@ The circuit therefore maps a state \(s\) to a probability distribution over acti
 
 The policy-gradient objective is
 
-\[
-J(\theta)
-=
+$$
+J(\theta)=
 \mathbb E_{\tau\sim\pi_\theta}
 \left[
 \sum_t\gamma^t r_t
 \right].
-\]
+$$
 
 A standard estimator has the form
 
-\[
+$$
 \nabla_\theta J
 \approx
 \frac1{B}
@@ -97,13 +93,13 @@ A standard estimator has the form
 \nabla_\theta
 \log\pi_\theta(a_t|s_t)
 \,G_t.
-\]
+$$
 
 If the policy is a QNN, the quantum circuit supplies
 
-\[
+$$
 \pi_\theta(a|s).
-\]
+$$
 
 ---
 
@@ -111,19 +107,17 @@ If the policy is a QNN, the quantum circuit supplies
 
 Instead of a quantum policy, one can use a quantum circuit to approximate
 
-\[
-V^\pi(s)
-=
+$$
+V^\pi(s)=
 \mathbb E_\pi[G_t|s_t=s]
-\]
+$$
 
 or
 
-\[
-Q^\pi(s,a)
-=
+$$
+Q^\pi(s,a)=
 \mathbb E_\pi[G_t|s_t=s,a_t=a].
-\]
+$$
 
 A QNN can therefore act as a function approximator.
 
@@ -133,7 +127,7 @@ A QNN can therefore act as a function approximator.
 
 A practical architecture is
 
-\[
+$$
 s
 \rightarrow
 \text{classical preprocessing}
@@ -145,7 +139,7 @@ U(\theta)
 \text{measurement}
 \rightarrow
 \pi(a|s).
-\]
+$$
 
 The environment and RL loop remain classical.
 
@@ -195,9 +189,9 @@ An RL agent must explore actions.
 
 A quantum policy naturally produces a probability distribution
 
-\[
+$$
 \pi_\theta(a|s),
-\]
+$$
 
 so sampling from the quantum output can directly implement stochastic action selection.
 
@@ -209,11 +203,11 @@ Nevertheless, quantum sampling is not automatically better than classical random
 
 A credible experiment should compare:
 
-\[
+$$
 \text{QRL agent}
 \quad\text{vs}\quad
 \text{strong classical RL baseline}.
-\]
+$$
 
 Metrics include:
 
